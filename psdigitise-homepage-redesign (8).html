@@ -6,7 +6,6 @@
 <title>PS Digitise | ERPNext Implementation Company India | PS Books, PS CRM & AI Software</title>
 <meta name="description" content="PS Digitise — certified Frappe partner in India. ERPNext implementation from ₹75,000. Own products: PS Books (accounting from ₹18,000), PS CRM (sales from ₹15,000), PS Manufacturing (BOM, MRP from ₹45,000). 200+ projects. Fixed price. 8-week go-live.">
 
-<!-- SEO + GEO Schema Markup -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,7 +35,7 @@
   },
   "hasCredential": [
     {"@type": "EducationalOccupationalCredential", "credentialCategory": "Certified Frappe Partner"},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "Google Certified Partner"}
+   {"@type": "EducationalOccupationalCredential", "credentialCategory": "Google Certified Partner"}
   ],
   "areaServed": ["India", "UAE", "UK"],
   "knowsAbout": ["ERPNext", "Frappe Framework", "Manufacturing ERP", "India GST", "Tally Migration", "React Native", "AI Chatbots"]
@@ -244,9 +243,12 @@ body{
   width:100%;
   max-width:100vw;
 }
+body.menu-open {
+  overflow: hidden;
+}
 a{text-decoration:none;color:inherit;}
 
-/* WRAPPER — fixed: was width:100px */
+/* WRAPPER */
 .W{
   width:100%;
   max-width:1200px;
@@ -261,15 +263,17 @@ nav{
   background:rgba(13,5,32,.9);
   backdrop-filter:blur(20px);
 }
-.nav-inner{
-  width:100%;
-  max-width:1400px;
-  padding:0 30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:88px;
-  margin:0 auto;
+.nav-inner {
+  width: 100%;
+  max-width: 1400px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88px; /* Safe growing container */
+  margin: 0 auto;
+  gap: 15px;
+  flex-wrap: wrap; /* Allows everything to wrap cleanly instead of hiding */
 }
 .logo{
   display:flex;
@@ -284,14 +288,27 @@ nav{
 }
 .logo-ps{color:var(--white);}
 .logo-d{color:var(--p100);}
-.nav-links{display:flex;gap:24px;list-style:none;margin-right:28px;}
+
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap; /* Wraps items cleanly on high zoom levels */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+}
 .nav-links a{font-size:17px;font-weight:600;color:var(--ink2);transition:color .15s;}
 .nav-links a:hover,.nav-links a.on{color:var(--white);}
 .nav-badge{
   font-size:13px;font-weight:700;letter-spacing:.05em;
   color:var(--teal);background:rgba(0,200,150,.1);
   border:1px solid rgba(0,200,150,.25);
-  padding:10px 18px;border-radius:100px;margin-right:12px;white-space:nowrap;
+  padding:10px 18px;border-radius:100px;white-space:nowrap;
 }
 .nav-cta{
   font-size:16px;font-weight:700;
@@ -343,8 +360,8 @@ nav{
 }
 .hero-eyebrow .bar{width:24px;height:1.5px;background:var(--teal);}
 .hero-h1{
-  font-size:clamp(2.8rem,8vw,7rem);
-  font-weight:800;line-height:1.04;
+  font-size:clamp(2.5rem, 6.5vw, 5.5rem);
+  font-weight:800;line-height:1.08;
   letter-spacing:-.04em;
   color:var(--white);
   margin-bottom:24px;
@@ -546,7 +563,7 @@ nav{
   color:var(--p200);margin-bottom:10px;
 }
 .cap-highlight-text{font-size:14px;color:var(--ink2);line-height:1.65;}
-.cap-highlight strong{color:var(--white);}
+.cap-highlight  strong{color:var(--white);}
 
 /* COMPARISON */
 .compare-section{margin-bottom:72px;overflow-x:auto;}
@@ -826,27 +843,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
 .f-contact a:hover{color:var(--white);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .cap-grid{grid-template-columns:1fr;}
-  .svc-grid{grid-template-columns:repeat(2,1fr);}
-  .ind-grid{grid-template-columns:repeat(2,1fr);}
-  .metrics{grid-template-columns:repeat(2,1fr);}
-  .footer-g{grid-template-columns:1fr 1fr;gap:40px;}
-}
-@media(max-width:700px){
-  .W,
-  .hero{padding:100px 24px 64px;}
-  .nav-links{display:none;}
-  .svc-grid,.t-grid,.cap-grid{grid-template-columns:1fr;}
-  .proof-bar,.metrics{grid-template-columns:repeat(2,1fr);}
-  .proc-steps{grid-template-columns:1fr 1fr;}
-  .ind-grid{grid-template-columns:1fr 1fr;}
-  .footer-g{grid-template-columns:1fr;}
-  .cs-row{grid-template-columns:140px 1fr 1fr 1fr;}
-  section{padding:72px 0;}
-}
-
 /* PRODUCTS SECTION */
 .prod-section{
   padding:100px 0;
@@ -983,11 +979,8 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
 .pbtn.line{background:rgba(255,255,255,.05);border:1px solid var(--line2);color:var(--p100);}
 .pbtn.muted{background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--ink3);pointer-events:none;}
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-
 /* ═══════════════════════════════════════════
-   HAMBURGER MENU — mobile only
+   HAMBURGER MENU & BLUR MODAL OVERLAY
 ═══════════════════════════════════════════ */
 .menu-toggle{
   display:none;
@@ -999,6 +992,21 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   padding:4px;
   line-height:1;
 }
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 2, 12, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index:9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
 .mobile-menu{
   position:fixed;
   top:0;
@@ -1006,18 +1014,21 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   width:85%;
   max-width:320px;
   height:100vh;
-  background:#020b26;
+  background:#0d0520;
+  border-left: 1px solid var(--line2);
   z-index:9999;
-  transition:.3s;
-  padding:20px;
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding:24px;
   overflow-y:auto;
+  display: flex;
+  flex-direction: column;
 }
 .mobile-menu.active{right:0;}
 .mobile-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:30px;
+  margin-bottom:40px;
 }
 .mobile-menu .logo-img{height:42px;width:auto;max-width:200px;}
 .close-menu{
@@ -1025,24 +1036,49 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   font-size:34px;cursor:pointer;line-height:1;padding:4px;
 }
 .mobile-menu ul{list-style:none;padding:0;}
-.mobile-menu li{margin:22px 0;}
-.mobile-menu a{color:white;font-size:16px;font-weight:600;}
-.mobile-btn{
-  display:block;
-  background:linear-gradient(135deg,var(--p400),var(--mg));
-  text-align:center;padding:14px;border-radius:10px;
-  margin-top:30px;font-weight:700;color:#fff;
+.mobile-menu li{margin:24px 0;}
+.mobile-menu a{color:var(--ink2);font-size:18px;font-weight:600;transition: color 0.15s;}
+.mobile-menu a:hover, .mobile-menu a.on{color: white;}
+.mobile-partner-btn {
+  display: block;
+  text-align: center;
+  margin: 20px 0 12px;
+  padding: 10px 18px;
+  border-radius: 100px; /* Pill shape matching desktop/mockup */
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: #00C896; /* Exact teal color for text */
+  background: transparent; /* Clean hollow background */
+  border: 1px solid rgba(0, 200, 150, 0.25); /* Sleek teal outline border using hex fallback opacity */
+  white-space: nowrap;
 }
 
+.mobile-partner-btn:hover {
+  background: rgba(0, 200, 150, 0.05);
+  border-color: #00C896; /* Solid border on hover state */
+}
+.mobile-btn {
+  display: block;
+  background: linear-gradient(135deg, var(--p400), var(--mg)); 
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 8px; 
+  text-decoration: none;
+}
 /* ═══════════════════════════════════════════
    RESPONSIVE BREAKPOINTS
 ═══════════════════════════════════════════ */
 
-/* Tablet: 1024px */
-@media(max-width:1024px){
-  .svc-grid{grid-template-columns:repeat(2,1fr);}
-  .metrics{grid-template-columns:repeat(2,1fr);}
-  .footer-g{grid-template-columns:1fr 1fr;gap:40px;}
+/* Tablet & Zoom optimization: 1100px */
+@media(max-width:1100px){
+  .nav-links{gap: 16px;}
+  .nav-links a{font-size: 15px;}
+  .nav-badge{padding: 8px 14px; font-size: 12px;}
+  .nav-cta{padding: 8px 16px; font-size: 14px;}
   .cap-pane.active{grid-template-columns:1fr;}
   .cap-left{padding:32px 0;border-right:none;border-bottom:1px solid rgba(139,69,232,.15);}
   .cap-right{padding:32px 0 0;}
@@ -1051,151 +1087,163 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   .proc-steps{grid-template-columns:repeat(2,1fr);gap:40px;}
   .proc-steps::before{display:none;}
   .prod-showcase{grid-template-columns:1fr 1fr;}
+  .footer-g{grid-template-columns:1fr 1fr;gap:40px;}
 }
 
-/* Mobile: 768px */
+@media(max-width:930px){
+  .nav-links, .nav-badge, .nav-cta { display: none; }
+  .menu-toggle { display: block; }
+}
+
+/* Mobile Layouts */
+/* Mobile Layouts */
 @media(max-width:768px){
-  /* NAV */
   .nav-inner{height:72px;padding:0 16px;}
   .logo-img{height:40px;}
-  .nav-links,.nav-badge,.nav-cta{display:none;}
-  .menu-toggle{display:block;}
-
-  /* HERO */
-  .hero{padding:88px 16px 56px;}
-  .hero-h1{font-size:clamp(2rem,9vw,3rem);letter-spacing:-.03em;}
+  .hero{padding:110px 16px 56px;}
+  .hero-h1{font-size:clamp(2rem, 8.5vw, 3.2rem); letter-spacing:-.03em;}
   .hero-sub{font-size:14px;margin-bottom:32px;}
-  .hero-ctas{gap:10px;}
-  .btn-primary,.btn-sec{font-size:14px;padding:12px 22px;}
+  .hero-ctas{gap:10px; flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto;}
+  
+  /* Purple gradient style from image_3b7b95.jpg */
+  .btn-primary {
+    font-size: 15px;
+    padding: 14px 24px;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--p400), var(--mg)) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 28px rgba(192, 38, 211, 0.25);
+  }
+
+  /* Outlined style from image_3b7b95.jpg */
+  .btn-sec {
+    font-size: 15px;
+    padding: 14px 24px;
+    width: 100%;
+    text-align: center;
+    color: var(--p100) !important;
+    border: 1.5px solid rgba(168, 85, 247, 0.35) !important;
+    background: transparent !important;
+  }
   .hero-pills{gap:8px;}
   .hpill{font-size:10px;padding:6px 12px;}
-  /* Hide decorative bars on mobile to prevent overflow */
   .hero-bars{display:none;}
 
-  /* SECTIONS */
-  .erp-wrap,.svc-section,.ind-section,.proc-section,.testi-section{padding:64px 0;}
-  .prod-section{padding:64px 0;}
+  /* Force Mobile Sidebar Button to load specific Hex Theme colors */
+  .mobile-partner-btn {
+    display: block !important;
+    text-align: center;
+    margin: 20px 0 12px !important;
+    padding: 10px 18px !important;
+    border-radius: 100px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: .05em !important;
+    color: #00C896 !important; /* Exact color layout definition */
+    background: transparent !important;
+    border: 1px solid rgba(0, 200, 150, 0.25) !important;
+    white-space: nowrap !important;
+  }
 
-  /* ERP head */
+  .mobile-partner-btn:hover {
+    background: rgba(0, 200, 150, 0.05) !important;
+    border-color: #00C896 !important;
+  }
+
+  .erp-wrap,.svc-section,.ind-section,.proc-section,.testi-section, .prod-section{padding:64px 0;}
   .erp-head{margin-bottom:40px;}
   .erp-h2{font-size:clamp(1.6rem,7vw,2.2rem);}
-
-  /* Proof bar — 2 cols */
   .proof-bar{grid-template-columns:1fr 1fr;}
   .pb{padding:20px 12px;}
   .pb-num{font-size:1.8rem;}
-
-  /* Cap tabs */
   .cap-tabs-wrap{margin-bottom:40px;}
-  .cap-pane.active{grid-template-columns:1fr;}
-  .cap-left{padding:24px 0;border-right:none;border-bottom:1px solid rgba(139,69,232,.15);}
-  .cap-right{padding:24px 0 0;}
-
-  /* Comparison — scrollable */
   .compare-section{overflow-x:auto;-webkit-overflow-scrolling:touch;}
   .cmp-wrap{min-width:480px;grid-template-columns:120px 1fr 1fr 1fr;}
   .cmp-row-label{font-size:11px;padding:14px 10px;}
   .cmp-cell{font-size:11px;padding:12px 8px;}
   .cmp-col-head{padding:14px 10px;}
   .cmp-col-name{font-size:10px;}
-
-  /* Services */
   .svc-grid{grid-template-columns:1fr;}
-
-  /* Metrics */
   .metrics{grid-template-columns:1fr 1fr;}
   .mb{padding:32px 16px;}
   .mb-n{font-size:2rem;}
   .mb-l{font-size:12px;}
-
-  /* Industries bento */
   .ind-bento{grid-template-columns:1fr 1fr;}
   .ib.span2{grid-column:span 2;}
   .ib{padding:20px 16px;}
-
-  /* Process */
   .proc-steps{grid-template-columns:1fr 1fr;gap:32px;}
-  .proc-steps::before{display:none;}
-
-  /* Testimonials */
   .t-grid{grid-template-columns:1fr;}
-
-  /* Products */
   .prod-intro{grid-template-columns:1fr;}
   .prod-view-all{width:fit-content;}
   .prod-showcase{grid-template-columns:1fr;}
-
-  /* Comparison callout */
   .prod-compare-grid{grid-template-columns:1fr !important;}
-
-  /* CTA */
   .cta-section{padding:64px 16px;}
   .cta-h2{font-size:clamp(1.5rem,6vw,2rem);}
   .cta-sub{font-size:14px;}
-
-  /* Footer */
   .footer-g{grid-template-columns:1fr;gap:32px;}
   .f-bottom{flex-direction:column;align-items:flex-start;gap:8px;}
   .f-contact{flex-direction:column;gap:6px;}
-
-  /* Sec head */
   .sec-head{margin-bottom:36px;}
   .sec-h2{font-size:clamp(1.6rem,7vw,2.2rem);}
 }
 
-/* Small mobile: 480px */
 @media(max-width:480px){
-  .proof-bar{grid-template-columns:1fr 1fr;}
-  .ind-bento{grid-template-columns:1fr;}
+  .proof-bar, .metrics, .proc-steps, .ind-bento{grid-template-columns:1fr;}
   .ib.span2{grid-column:span 1;}
-  .proc-steps{grid-template-columns:1fr;gap:28px;}
-  .metrics{grid-template-columns:1fr 1fr;}
-  .hero-h1{font-size:clamp(1.8rem,10vw,2.5rem);}
   .pcard-footer{flex-direction:column;align-items:flex-start;gap:16px;}
-  .pcard-btns{align-items:flex-start;flex-direction:row;}
+  .pcard-btns{align-items:stretch;flex-direction:row; width:100%; gap: 8px;}
+  .pbtn { flex: 1; justify-content: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">
        <img src="./images/psdlogo.png" alt="PS Digitise" class="logo-img">
     </a>
-    <ul class="nav-links">
-      <li><a href="/erpnext-ai" class="on">ERPNext</a></li>
-      <li><a href="/industries/manufacturing">Industries</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="/blogs">Insights</a></li>
-      <li><a href="/aboutus">About</a></li>
-    </ul>
-    <a href="/erpnext-ai" class="nav-badge">✦ Frappe Partner</a>
-    <a href="/contact" class="nav-cta">Free Consultation</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <div class="nav-right-group">
+      <ul class="nav-links">
+        <li><a href="/erpnext-ai" class="on">ERPNext</a></li>
+        <li><a href="/industries/manufacturing">Industries</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="/blogs">Insights</a></li>
+        <li><a href="/aboutus">About</a></li>
+      </ul>
+      <a href="/erpnext-ai" class="nav-badge">✦ Frappe Partner</a>
+      <a href="/contact" class="nav-cta">Free Consultation</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-header">
     <img src="./images/psdlogo.png" alt="PS Digitise" class="logo-img">
     <button class="close-menu" id="closeMenu" aria-label="Close menu">✕</button>
   </div>
   <ul>
-    <li><a href="/aboutus">About Us</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="/blogs">Blogs</a></li>
-    <li><a href="/erpnext-ai">ERPNext AI</a></li>
+    <li><a href="/erpnext-ai" class="on">ERPNext</a></li>
     <li><a href="/industries/manufacturing">Industries</a></li>
-    <li><a href="/contact">Contact</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="/blogs">Insights</a></li>
+    <li><a href="/aboutus">About</a></li>
   </ul>
-  <a href="/contact" class="mobile-btn">Free Consultation →</a>
+  
+  <a href="/erpnext-ai" class="mobile-partner-btn">
+    ✦ Frappe Partner
+  </a>
+  <a href="/contact" class="mobile-btn">
+    Free Consultation →
+  </a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -1215,43 +1263,9 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
       <a href="/contact" class="btn-primary">Book Free ERP Assessment</a>
       <a href="/erpnext-ai" class="btn-sec">Explore ERPNext →</a>
     </div>
-    <div class="hero-pills">
-      <div class="hpill"><span class="dot"></span>50+ ERPNext Implementations</div>
-      <div class="hpill"><span class="dot"></span>₹0 Licensing Cost</div>
-      <div class="hpill"><span class="dot"></span>Go Live in 8 Weeks</div>
-      <div class="hpill"><span class="dot"></span>4.9★ · 51 Reviews</div>
-      <div class="hpill"><span class="dot"></span>India · UAE · UK</div>
-    </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="mq-strip">
-  <div class="mq-track">
-    <span class="mq-item">ERPNext Implementation</span>
-    <span class="mq-item">Frappe HRMS</span>
-    <span class="mq-item">Tally Migration</span>
-    <span class="mq-item">Manufacturing ERP India</span>
-    <span class="mq-item">AI Chatbots</span>
-    <span class="mq-item">React &amp; Next.js</span>
-    <span class="mq-item">React Native Mobile</span>
-    <span class="mq-item">India GST &amp; E-Invoice</span>
-    <span class="mq-item">Business Automation</span>
-    <span class="mq-item">SEO &amp; GEO</span>
-    <span class="mq-item">ERPNext Implementation</span>
-    <span class="mq-item">Frappe HRMS</span>
-    <span class="mq-item">Tally Migration</span>
-    <span class="mq-item">Manufacturing ERP India</span>
-    <span class="mq-item">AI Chatbots</span>
-    <span class="mq-item">React &amp; Next.js</span>
-    <span class="mq-item">React Native Mobile</span>
-    <span class="mq-item">India GST &amp; E-Invoice</span>
-    <span class="mq-item">Business Automation</span>
-    <span class="mq-item">SEO &amp; GEO</span>
-  </div>
-</div>
-
-<!-- ERP SECTION -->
 <div class="erp-wrap">
   <div class="W">
     <div class="erp-head">
@@ -1428,7 +1442,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   </div>
 </div>
 
-<!-- PRODUCTS -->
 <section class="prod-section" id="products">
   <div class="W">
     <div style="background:linear-gradient(135deg,rgba(74,26,158,.15),rgba(192,38,211,.08));border:1px solid rgba(139,69,232,.25);border-left:4px solid var(--mg);border-radius:0 14px 14px 0;padding:22px 28px;margin-bottom:56px;">
@@ -1448,8 +1461,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
     </div>
 
     <div class="prod-showcase">
-
-      <!-- PS BOOKS -->
       <div class="pcard">
         <div class="pcard-visual books">
           <div class="pcard-header">
@@ -1493,7 +1504,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
         </div>
       </div>
 
-      <!-- PS CRM -->
       <div class="pcard">
         <div class="pcard-visual crm">
           <div class="pcard-header">
@@ -1548,7 +1558,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
         </div>
       </div>
 
-      <!-- PS MANUFACTURING -->
       <div class="pcard">
         <div class="pcard-visual mfg">
           <div class="pcard-header">
@@ -1598,7 +1607,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="prod-compare-grid" style="margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
@@ -1615,11 +1623,9 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
         <div style="font-size:13px;color:var(--ink2);line-height:1.6;">Tally Gold is <strong style="color:var(--white);">₹67,500 + ₹13,500/year</strong> for software alone. PS Books at ₹18,000–₹35,000 includes deployment, Tally migration, training and 3-month support. <strong style="color:var(--teal);">Better value.</strong></div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="svc-section" id="services">
   <div class="W">
     <div class="sec-head">
@@ -1638,7 +1644,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   </div>
 </section>
 
-<!-- METRICS -->
 <div class="metrics">
   <div class="mb"><div class="mb-n">200+</div><div class="mb-l">Projects delivered<br>India · UAE · UK</div></div>
   <div class="mb"><div class="mb-n">6×</div><div class="mb-l">Average organic traffic<br>growth for SEO clients</div></div>
@@ -1646,7 +1651,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   <div class="mb"><div class="mb-n">4.9★</div><div class="mb-l">Google rating across<br>51 verified client reviews</div></div>
 </div>
 
-<!-- INDUSTRIES -->
 <section class="ind-section">
   <div class="W">
     <div class="sec-head">
@@ -1721,7 +1725,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   </div>
 </section>
 
-<!-- PROCESS -->
 <section class="proc-section">
   <div class="W">
     <div class="sec-head">
@@ -1738,7 +1741,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testi-section">
   <div class="W">
     <div class="sec-head">
@@ -1754,7 +1756,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
     <h2 class="cta-h2">Ready to implement ERPNext<br>or build your next product?</h2>
@@ -1767,7 +1768,6 @@ footer{background:var(--p900);border-top:1px solid var(--line);padding:72px 0 48
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="W">
     <div class="footer-g">
@@ -1825,22 +1825,27 @@ function switchCap(idx){
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 const closeMenu = document.getElementById("closeMenu");
+const sidebarOverlay = document.getElementById("sidebarOverlay");
 
-menuToggle.onclick = () => mobileMenu.classList.add("active");
-closeMenu.onclick = () => mobileMenu.classList.remove("active");
+const openSidebar = () => {
+  mobileMenu.classList.add("active");
+  sidebarOverlay.classList.add("active");
+  document.body.classList.add("menu-open");
+};
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (mobileMenu.classList.contains('active') && 
-      !mobileMenu.contains(e.target) && 
-      e.target !== menuToggle) {
-    mobileMenu.classList.remove('active');
-  }
-});
+const closeSidebar = () => {
+  mobileMenu.classList.remove("active");
+  sidebarOverlay.classList.remove("active");
+  document.body.classList.remove("menu-open");
+};
+
+menuToggle.onclick = openSidebar;
+closeMenu.onclick = closeSidebar;
+sidebarOverlay.onclick = closeSidebar;
 
 // Close menu on nav link click
 mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+  link.addEventListener('click', closeSidebar);
 });
 </script>
 </body>
