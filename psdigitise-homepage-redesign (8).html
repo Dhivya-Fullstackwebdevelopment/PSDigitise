@@ -650,7 +650,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -1161,7 +1161,7 @@
 
     .svc-n {
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 15px;
       color: var(--p300);
       margin-bottom: 18px;
       letter-spacing: .06em;
@@ -1296,18 +1296,34 @@
 
     .ib-num {
       font-family: var(--mono);
-      font-size: 10px;
-      color: rgba(168, 85, 247, .4);
+      font-size: 18px;
+      color: rgb(168 85 247 / 81%);
       margin-bottom: 14px;
       letter-spacing: .06em;
     }
 
-    .ib-icon {
+    /* .ib-icon {
       font-size: 28px;
       margin-bottom: 14px;
       display: block;
       filter: grayscale(.2);
       transition: filter .2s;
+    } */
+
+    .ib-icon {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ib-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .ib:hover .ib-icon {
@@ -1323,7 +1339,7 @@
     }
 
     .ib-desc {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--ink2);
       line-height: 1.6;
     }
@@ -1385,7 +1401,7 @@
       align-items: center;
       justify-content: center;
       font-family: var(--mono);
-      font-size: 13px;
+      font-size: 18px;
       color: var(--p200);
       margin: 0 auto 22px;
       position: relative;
@@ -1401,14 +1417,14 @@
 
     .ps-d {
       font-size: 13px;
-      color: var(--ink2);
+      color: rgb(255 255 255 / 76%);
       line-height: 1.6;
     }
 
     .ps-tag {
       display: inline-block;
       margin-top: 14px;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--p200);
       background: rgba(107, 47, 204, .12);
@@ -1443,7 +1459,7 @@
 
     .t-text {
       font-size: 14px;
-      color: var(--ink2);
+      color: rgb(255 255 255 / 76%);
       line-height: 1.75;
       font-style: italic;
       margin-bottom: 22px;
@@ -1476,7 +1492,7 @@
     }
 
     .t-co {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--ink3);
     }
 
@@ -1517,7 +1533,7 @@
     .cta-sub {
       font-size: 17px;
       font-weight: 300;
-      color: var(--ink2);
+      color: rgb(255 255 255 / 76%);
       margin-bottom: 40px;
       line-height: 1.65;
     }
@@ -1609,7 +1625,7 @@
 
     .f-desc {
       font-size: 13px;
-      color: var(--ink2);
+      color: rgb(255 255 255 / 58%);
       line-height: 1.7;
       margin-bottom: 18px;
     }
@@ -1623,7 +1639,7 @@
     .ftag {
       font-size: 10px;
       font-weight: 700;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 58%);
       background: rgba(255, 255, 255, .05);
       border: 1px solid var(--line);
       padding: 3px 10px;
@@ -1636,7 +1652,7 @@
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--ink2);
+      color: rgb(255 255 255 / 78%);
       margin-bottom: 18px;
     }
 
@@ -1649,7 +1665,7 @@
 
     .f-links a {
       font-size: 13px;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 58%);
       transition: color .15s;
     }
 
@@ -1669,7 +1685,7 @@
 
     .f-copy {
       font-size: 12px;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 58%);
     }
 
     .f-contact {
@@ -1679,7 +1695,7 @@
 
     .f-contact a {
       font-size: 12px;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 58%);
       transition: color .15s;
     }
 
@@ -1808,34 +1824,37 @@
     .pcard-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 2;
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
     .pcard-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, .15);
+      width: 70px;
+      height: 70px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-      border: 1px solid rgba(255, 255, 255, .2);
+      background: none;
+      border: none;
+    }
+
+    .pcard-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .pcard-name {
       font-size: 20px;
       font-weight: 800;
+      line-height: 1.1;
       color: #fff;
-      letter-spacing: -.03em;
     }
 
     .pcard-tagline {
-      font-size: 13px;
+      font-size: 14px;
       color: rgba(255, 255, 255, .7);
       line-height: 1.55;
       margin-bottom: 20px;
@@ -2005,7 +2024,7 @@
     }
 
     .pcard-feat {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--ink2);
       background: rgba(255, 255, 255, .05);
@@ -2929,7 +2948,7 @@
         <div class="pcard">
           <div class="pcard-visual books">
             <div class="pcard-header">
-              <div class="pcard-icon">📒</div>
+              <div class="pcard-icon"><img src="/assests/icons/books.png" alt="ERPNext Books"></div>
               <div class="pcard-name">ERPNext Books</div>
             </div>
             <div class="pcard-tagline">Accounting, invoicing &amp; GST for Indian SMBs. Tally-familiar. Cloud-native. Go
@@ -2979,7 +2998,7 @@
         <div class="pcard">
           <div class="pcard-visual crm">
             <div class="pcard-header">
-              <div class="pcard-icon">🎯</div>
+              <div class="pcard-icon"><img src="/assests/icons/focus.png" alt="ERPNext CRM"></div>
               <div class="pcard-name">ERPNext CRM</div>
             </div>
             <div class="pcard-tagline">Sales pipeline, lead management &amp; WhatsApp follow-ups for Indian B2B sales
@@ -3043,7 +3062,7 @@
         <div class="pcard">
           <div class="pcard-visual mfg">
             <div class="pcard-header">
-              <div class="pcard-icon">🏭</div>
+              <div class="pcard-icon"><img src="/assests/icons/mnaufacturing.png" alt="ERPNext Manufacturing"></div>
               <div class="pcard-name">ERPNext Manufacturing</div>
             </div>
             <div class="pcard-tagline">BOM, Work Orders &amp; MRP — pre-configured for Indian manufacturers. No SAP. No
@@ -3101,9 +3120,9 @@
         <div
           style="background:rgba(22,8,53,.6);border:1px solid rgba(139,69,232,.18);border-radius:12px;padding:20px 22px;">
           <div
-            style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mg2);margin-bottom:8px;">
+            style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mg2);margin-bottom:8px;">
             vs Zoho CRM</div>
-          <div style="font-size:13px;color:var(--ink2);line-height:1.6;">Zoho CRM costs <strong
+          <div style="font-size:14px;color:var(--ink2);line-height:1.6;">Zoho CRM costs <strong
               style="color:var(--white);">₹9,600–₹31,200/year</strong> for a 10-user team. PS CRM is <strong
               style="color:var(--teal);">₹15,000–₹25,000 once</strong> — paid back in weeks. Unlimited users forever.
           </div>
@@ -3111,9 +3130,9 @@
         <div
           style="background:rgba(22,8,53,.6);border:1px solid rgba(139,69,232,.18);border-radius:12px;padding:20px 22px;">
           <div
-            style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mg2);margin-bottom:8px;">
+            style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mg2);margin-bottom:8px;">
             vs Zoho Books</div>
-          <div style="font-size:13px;color:var(--ink2);line-height:1.6;">Zoho Books Professional costs <strong
+          <div style="font-size:14px;color:var(--ink2);line-height:1.6;">Zoho Books Professional costs <strong
               style="color:var(--white);">₹17,988/year</strong> — every year. PS Books is <strong
               style="color:var(--teal);">₹18,000–₹35,000 once</strong> — paid back in under 2 years. No recurring costs.
           </div>
@@ -3121,9 +3140,9 @@
         <div
           style="background:rgba(22,8,53,.6);border:1px solid rgba(139,69,232,.18);border-radius:12px;padding:20px 22px;">
           <div
-            style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mg2);margin-bottom:8px;">
+            style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mg2);margin-bottom:8px;">
             vs Tally Gold</div>
-          <div style="font-size:13px;color:var(--ink2);line-height:1.6;">Tally Gold is <strong
+          <div style="font-size:14px;color:var(--ink2);line-height:1.6;">Tally Gold is <strong
               style="color:var(--white);">₹67,500 + ₹13,500/year</strong> for software alone. PS Books at
             ₹18,000–₹35,000 includes deployment, Tally migration, training and 3-month support. <strong
               style="color:var(--teal);">Better value.</strong></div>
@@ -3216,7 +3235,7 @@
       <div class="ind-bento">
         <div class="ib span2">
           <div class="ib-num">01</div>
-          <span class="ib-icon">🏭</span>
+          <span class="ib-icon"> <img src="/assests/icons/mnaufacturing.png" alt="Manufacturing"></span>
           <div class="ib-name">Manufacturing</div>
           <div class="ib-desc">ERPNext BOM, MRP, Work Orders, subcontracting and multi-stage quality control — for
             discrete manufacturers, process plants, textile mills and pharma.</div>
@@ -3224,32 +3243,32 @@
         </div>
         <div class="ib">
           <div class="ib-num">02</div>
-          <span class="ib-icon">🚚</span>
+          <span class="ib-icon"><img src="/assests/icons/truck.png" alt="Trading & Distribution"></span>
           <div class="ib-name">Trading &amp; Distribution</div>
           <div class="ib-desc">Multi-warehouse inventory, credit limits, CRM and GST-compliant invoicing for
             wholesalers.</div>
         </div>
         <div class="ib">
           <div class="ib-num">03</div>
-          <span class="ib-icon">🛒</span>
+          <span class="ib-icon"><img src="/assests/icons/retail.png" alt="Retail & E-Commerce"></span>
           <div class="ib-name">Retail &amp; E-Commerce</div>
           <div class="ib-desc">POS, AI recommendations, multi-store inventory and Razorpay payment integration.</div>
         </div>
         <div class="ib">
           <div class="ib-num">04</div>
-          <span class="ib-icon">💼</span>
+          <span class="ib-icon"><img src="/assests/icons/consulting.png" alt="Services & Consulting"></span>
           <div class="ib-name">Services &amp; Consulting</div>
           <div class="ib-desc">Project management, timesheet billing, CRM and automated invoice collection.</div>
         </div>
         <div class="ib">
           <div class="ib-num">05</div>
-          <span class="ib-icon">🏥</span>
+          <span class="ib-icon"><img src="/assests/icons/healthcare.png" alt="Healthcare"></span>
           <div class="ib-name">Healthcare</div>
           <div class="ib-desc">Patient management, appointment bots, teleconsultation and medical records.</div>
         </div>
         <div class="ib span2">
           <div class="ib-num">06</div>
-          <span class="ib-icon">🌾</span>
+          <span class="ib-icon"><img src="/assests/icons/agro.png" alt="Agro Processing"></span>
           <div class="ib-name">Agro Processing</div>
           <div class="ib-desc">Yield tracking, by-product costing, batch processing and multi-location inventory for
             rice mills, dal mills and oil mills across Tamil Nadu and Andhra Pradesh.</div>
@@ -3257,7 +3276,7 @@
         </div>
         <div class="ib">
           <div class="ib-num">07</div>
-          <span class="ib-icon">🎓</span>
+          <span class="ib-icon"><img src="/assests/icons/education.png" alt="Education & EdTech"></span>
           <div class="ib-name">Education &amp; EdTech</div>
           <div class="ib-desc">Fee management, LMS platforms, AI tutors and student engagement tools.</div>
         </div>
@@ -3269,14 +3288,14 @@
         </div>
         <div class="ib">
           <div class="ib-num">09</div>
-          <span class="ib-icon">💊</span>
+          <span class="ib-icon"><img src="/assests/icons/pharma.png" alt="Pharma & Healthcare Mfg"></span>
           <div class="ib-name">Pharma &amp; Healthcare Mfg</div>
           <div class="ib-desc">Batch traceability, Certificate of Analysis, QC parameters and Schedule M compliance.
           </div>
         </div>
         <div class="ib">
           <div class="ib-num">10</div>
-          <span class="ib-icon">🖨️</span>
+          <span class="ib-icon"><img src="/assests/icons/printing.png" alt="Printing & Packaging"></span>
           <div class="ib-name">Printing &amp; Packaging</div>
           <div class="ib-desc">Job costing, material planning, subcontracting and customer-specific pricing for
             converters.</div>
