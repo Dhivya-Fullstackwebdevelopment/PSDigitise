@@ -3478,51 +3478,34 @@
     sidebarOverlay.onclick = closeSidebar;
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeSidebar));
 
-    /* ═══════════════════════════════════════════
-       SCROLL ANIMATION ENGINE
-       Uses IntersectionObserver — no libraries.
-       Only adds classes, never touches existing ones.
-    ═══════════════════════════════════════════ */
+  
     (function () {
-      // Map: CSS selector → [extra classes to add before observing]
       const targets = [
 
-        /* ── ERP section ── */
         ['.erp-head', ['anim-ready']],
         ['.proof-bar .pb', ['anim-ready', 'anim-scale']],
         ['.cap-tabs-wrap', ['anim-ready']],
         ['.compare-section', ['anim-ready']],
         ['.ind-row .itag', ['anim-ready', 'anim-scale']],
-
-        /* ── Products section ── */
         ['.prod-intro', ['anim-ready']],
         ['.prod-showcase .pcard', ['anim-ready', 'anim-scale']],
         ['.prod-compare-grid > div', ['anim-ready']],
-
-        /* ── Services section ── */
         ['.sec-head', ['anim-ready']],
         ['.svc-grid .svc-card', ['anim-ready', 'anim-scale']],
 
-        /* ── Metrics bar ── */
         ['.metrics .mb', ['anim-ready', 'anim-scale']],
 
-        /* ── Industries section ── */
         ['.ind-bento .ib', ['anim-ready', 'anim-scale']],
 
-        /* ── Process section ── */
         ['.proc-steps .ps', ['anim-ready']],
 
-        /* ── Testimonials ── */
         ['.t-grid .t-card', ['anim-ready', 'anim-scale']],
 
-        /* ── CTA section ── */
         ['.cta-inner', ['anim-ready', 'anim-scale']],
 
-        /* ── Footer columns ── */
         ['.footer-g > div', ['anim-ready']],
       ];
 
-      // Stagger delays for multi-child selectors
       const staggerSelectors = new Set([
         '.proof-bar .pb',
         '.ind-row .itag',
@@ -3549,12 +3532,10 @@
         targets.forEach(([selector, classes]) => {
           const els = document.querySelectorAll(selector);
           els.forEach((el, i) => {
-            // Don't re-animate hero (already has CSS animations)
             if (el.closest('.hero')) return;
 
             classes.forEach(c => el.classList.add(c));
 
-            // Add stagger delay for list/grid items
             if (staggerSelectors.has(selector)) {
               const delayClass = 'anim-delay-' + Math.min(i + 1, 6);
               el.classList.add(delayClass);
@@ -3565,7 +3546,6 @@
         });
       }
 
-      // Run after DOM is ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
       } else {
