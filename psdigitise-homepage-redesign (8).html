@@ -633,7 +633,7 @@
 
     /* ERP SECTION */
     .erp-wrap {
-      padding: 100px 0;
+      padding: 50px 0;
       background:
         radial-gradient(ellipse 60% 80% at 0% 50%, rgba(74, 26, 158, .15) 0%, transparent 60%),
         rgba(16, 7, 34, .95);
@@ -740,9 +740,11 @@
     }
 
     .pb-lbl {
-      font-size: 12px;
-      color: var(--ink3);
-      line-height: 1.45;
+      color: rgba(187, 187, 187, 0.9);
+      /* brighter text */
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
     }
 
     /* CAPABILITY TABS */
@@ -768,7 +770,7 @@
       padding: 14px 28px;
       font-size: 13px;
       font-weight: 700;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 65%);
       cursor: pointer;
       border: none;
       background: none;
@@ -905,9 +907,19 @@
 
     .cap-stat-lbl {
       font-size: 12px;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 70%);
     }
 
+    /* .cap-highlight {
+      background: linear-gradient(135deg, rgba(74, 26, 158, .3), rgba(192, 38, 211, .15));
+      border: 1px solid rgba(139, 69, 232, .25);
+      border-radius: 12px;
+      padding: 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    } */
     .cap-highlight {
       background: linear-gradient(135deg, rgba(74, 26, 158, .3), rgba(192, 38, 211, .15));
       border: 1px solid rgba(139, 69, 232, .25);
@@ -917,6 +929,16 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .cap-highlight-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, .08);
     }
 
     .cap-highlight-label {
@@ -945,11 +967,11 @@
     }
 
     .compare-label {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 75%);
       text-align: center;
       margin-bottom: 48px;
     }
@@ -983,9 +1005,9 @@
     }
 
     .cmp-col-name {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 700;
-      color: var(--ink2);
+      color: rgb(255 255 255 / 75%);
       margin-bottom: 3px;
     }
 
@@ -994,8 +1016,8 @@
     }
 
     .cmp-col-sub {
-      font-size: 10px;
-      color: var(--ink3);
+      font-size: 11px;
+      color: rgb(255 255 255 / 58%);
     }
 
     .cmp-row-label {
@@ -1003,9 +1025,9 @@
       background: rgba(22, 8, 53, .6);
       border-right: 1px solid rgba(139, 69, 232, .12);
       border-bottom: 1px solid rgba(139, 69, 232, .08);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
-      color: var(--ink2);
+      color: rgb(255 255 255 / 75%);
       display: flex;
       align-items: center;
     }
@@ -1028,7 +1050,7 @@
     }
 
     .cc-na {
-      color: rgba(255, 255, 255, .2);
+      color: rgba(255, 255, 255, 0.652);
     }
 
     .cc-ok {
@@ -1082,7 +1104,7 @@
 
     /* SERVICES */
     .svc-section {
-      padding: 100px 0;
+      padding: 50px 0;
     }
 
     .sec-head {
@@ -1225,7 +1247,7 @@
 
     /* INDUSTRIES */
     .ind-section {
-      padding: 100px 0;
+      padding: 50px 0;
     }
 
     .ind-bento {
@@ -1324,7 +1346,7 @@
 
     /* PROCESS */
     .proc-section {
-      padding: 100px 0;
+      padding: 50px 0;
       background: rgba(22, 8, 53, .3);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -1396,7 +1418,7 @@
 
     /* TESTIMONIALS */
     .testi-section {
-      padding: 100px 0;
+      padding: 50px 0;
     }
 
     .t-grid {
@@ -1679,7 +1701,7 @@
 
     /* PRODUCTS SECTION */
     .prod-section {
-      padding: 100px 0;
+      padding: 50px 0;
       background:
         radial-gradient(ellipse 60% 70% at 100% 20%, rgba(192, 38, 211, .09) 0%, transparent 55%),
         radial-gradient(ellipse 50% 60% at 0% 80%, rgba(74, 26, 158, .1) 0%, transparent 55%),
@@ -2015,7 +2037,7 @@
 
     .pcard-price-from {
       font-size: 10px;
-      color: var(--ink3);
+      color: rgb(255 255 255 / 72%);
       margin-bottom: 2px;
     }
 
@@ -2642,7 +2664,7 @@
   <div class="erp-wrap">
     <div class="W">
       <div class="erp-head">
-        <div class="kicker">Certified Frappe Partner &nbsp;·&nbsp; ERPNext specialists India</div>
+        <!-- <div class="kicker">Certified Frappe Partner &nbsp;·&nbsp; ERPNext specialists India</div> -->
         <h2 class="erp-h2">
           ERPNext for Indian business.<br>
           <em>Implemented in 8 weeks.</em>
@@ -2706,6 +2728,7 @@
                 <div class="cap-stat-lbl">Typical Phase 1 go-live timeline</div>
               </div>
               <div class="cap-highlight">
+                <img src="/images/manufacturing.png" alt="ERPNext Manufacturing" class="cap-highlight-img">
                 <div class="cap-highlight-label">Why manufacturers choose ERPNext</div>
                 <div class="cap-highlight-text">SAP Business One costs <strong>₹3L–₹8L per year</strong> in licensing
                   alone. ERPNext is <strong>₹0 forever</strong> — open source, self-hosted or Frappe Cloud. Same
@@ -2739,6 +2762,7 @@
                 <div class="cap-stat-lbl">Software licensing — open source</div>
               </div>
               <div class="cap-highlight">
+                <img src="images/trading.png" alt="ERPNext Manufacturing" class="cap-highlight-img">
                 <div class="cap-highlight-label">GST compliance built-in</div>
                 <div class="cap-highlight-text">E-invoice IRN, e-way bill, GSTR-1 and GSTR-3B — all generated natively
                   via the <strong>India Compliance app</strong> included with every implementation at no extra charge.
@@ -2772,6 +2796,7 @@
                 <div class="cap-stat-lbl">Directly linked to ERPNext accounting</div>
               </div>
               <div class="cap-highlight">
+                <img src="images/hrms.png" alt="ERPNext HRMS" class="cap-highlight-img">
                 <div class="cap-highlight-label">No separate HR software cost</div>
                 <div class="cap-highlight-text">Most companies pay <strong>₹40,000–₹80,000/year</strong> for separate HR
                   software. Frappe HRMS is open source and included — saving 5-year costs of <strong>₹2L–₹4L</strong> on
@@ -2805,6 +2830,7 @@
                 <div class="cap-stat-lbl">Data loss across 50+ migrations completed</div>
               </div>
               <div class="cap-highlight">
+                <img src="images/tally.png" alt="ERPNext Migratio" class="cap-highlight-img">
                 <div class="cap-highlight-label">Our go-live guarantee</div>
                 <div class="cap-highlight-text">We run a complete Trial Balance reconciliation before every go-live. If
                   your <strong>closing balance in Tally doesn't match ERPNext opening balance exactly</strong> — we
@@ -2904,7 +2930,7 @@
           <div class="pcard-visual books">
             <div class="pcard-header">
               <div class="pcard-icon">📒</div>
-              <div class="pcard-name">PS Books</div>
+              <div class="pcard-name">ERPNext Books</div>
             </div>
             <div class="pcard-tagline">Accounting, invoicing &amp; GST for Indian SMBs. Tally-familiar. Cloud-native. Go
               live in one day.</div>
@@ -2943,7 +2969,7 @@
                   code included</div>
               </div>
               <div class="pcard-btns">
-                <a href="/products/books" class="pbtn fill">See PS Books →</a>
+                <a href="/products/books" class="pbtn fill">ERPNext PS Books →</a>
                 <a href="/contact" class="pbtn line">Request Demo</a>
               </div>
             </div>
@@ -2954,7 +2980,7 @@
           <div class="pcard-visual crm">
             <div class="pcard-header">
               <div class="pcard-icon">🎯</div>
-              <div class="pcard-name">PS CRM</div>
+              <div class="pcard-name">ERPNext CRM</div>
             </div>
             <div class="pcard-tagline">Sales pipeline, lead management &amp; WhatsApp follow-ups for Indian B2B sales
               teams.</div>
@@ -3007,7 +3033,7 @@
                   monthly fees</div>
               </div>
               <div class="pcard-btns">
-                <a href="/products/crm" class="pbtn fill">See PS CRM →</a>
+                <a href="/products/crm" class="pbtn fill"> ERPNext CRM →</a>
                 <a href="/contact" class="pbtn line">Request Demo</a>
               </div>
             </div>
@@ -3018,7 +3044,7 @@
           <div class="pcard-visual mfg">
             <div class="pcard-header">
               <div class="pcard-icon">🏭</div>
-              <div class="pcard-name">PS Manufacturing</div>
+              <div class="pcard-name">ERPNext Manufacturing</div>
             </div>
             <div class="pcard-tagline">BOM, Work Orders &amp; MRP — pre-configured for Indian manufacturers. No SAP. No
               monthly fees.</div>
