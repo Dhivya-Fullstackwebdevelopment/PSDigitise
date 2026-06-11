@@ -488,7 +488,7 @@
     }
 
     .hero-h1 {
-      font-size: 70px;
+      font-size: clamp(2.5rem, 6.5vw, 5.5rem);
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -.04em;
@@ -2595,6 +2595,77 @@
         justify-content: center;
       }
     }
+
+    /* ═══════════════════════════════════════════
+       SCROLL-TRIGGERED ANIMATIONS
+       All elements start hidden (via JS adding
+       .anim-ready), then .anim-in fires on enter.
+       No existing classes touched.
+    ═══════════════════════════════════════════ */
+
+    /* Base hidden state — added by JS so no-JS users still see content */
+    .anim-ready {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .anim-ready.anim-from-left {
+      transform: translateX(-40px);
+    }
+
+    .anim-ready.anim-from-right {
+      transform: translateX(40px);
+    }
+
+    .anim-ready.anim-scale {
+      transform: translateY(20px) scale(0.95);
+    }
+
+    .anim-ready.anim-fade {
+      transform: none;
+    }
+
+    /* Visible state */
+    .anim-ready.anim-in {
+      opacity: 1;
+      transform: translateY(0) translateX(0) scale(1);
+    }
+
+    /* Stagger delays for grid children */
+    .anim-ready.anim-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .anim-ready.anim-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .anim-ready.anim-delay-3 {
+      transition-delay: 0.24s;
+    }
+
+    .anim-ready.anim-delay-4 {
+      transition-delay: 0.32s;
+    }
+
+    .anim-ready.anim-delay-5 {
+      transition-delay: 0.40s;
+    }
+
+    .anim-ready.anim-delay-6 {
+      transition-delay: 0.48s;
+    }
+
+    /* Respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .anim-ready {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -3406,6 +3477,101 @@
     closeMenu.onclick = closeSidebar;
     sidebarOverlay.onclick = closeSidebar;
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeSidebar));
+
+    /* ═══════════════════════════════════════════
+       SCROLL ANIMATION ENGINE
+       Uses IntersectionObserver — no libraries.
+       Only adds classes, never touches existing ones.
+    ═══════════════════════════════════════════ */
+    (function () {
+      // Map: CSS selector → [extra classes to add before observing]
+      const targets = [
+
+        /* ── ERP section ── */
+        ['.erp-head', ['anim-ready']],
+        ['.proof-bar .pb', ['anim-ready', 'anim-scale']],
+        ['.cap-tabs-wrap', ['anim-ready']],
+        ['.compare-section', ['anim-ready']],
+        ['.ind-row .itag', ['anim-ready', 'anim-scale']],
+
+        /* ── Products section ── */
+        ['.prod-intro', ['anim-ready']],
+        ['.prod-showcase .pcard', ['anim-ready', 'anim-scale']],
+        ['.prod-compare-grid > div', ['anim-ready']],
+
+        /* ── Services section ── */
+        ['.sec-head', ['anim-ready']],
+        ['.svc-grid .svc-card', ['anim-ready', 'anim-scale']],
+
+        /* ── Metrics bar ── */
+        ['.metrics .mb', ['anim-ready', 'anim-scale']],
+
+        /* ── Industries section ── */
+        ['.ind-bento .ib', ['anim-ready', 'anim-scale']],
+
+        /* ── Process section ── */
+        ['.proc-steps .ps', ['anim-ready']],
+
+        /* ── Testimonials ── */
+        ['.t-grid .t-card', ['anim-ready', 'anim-scale']],
+
+        /* ── CTA section ── */
+        ['.cta-inner', ['anim-ready', 'anim-scale']],
+
+        /* ── Footer columns ── */
+        ['.footer-g > div', ['anim-ready']],
+      ];
+
+      // Stagger delays for multi-child selectors
+      const staggerSelectors = new Set([
+        '.proof-bar .pb',
+        '.ind-row .itag',
+        '.prod-showcase .pcard',
+        '.prod-compare-grid > div',
+        '.svc-grid .svc-card',
+        '.metrics .mb',
+        '.ind-bento .ib',
+        '.proc-steps .ps',
+        '.t-grid .t-card',
+        '.footer-g > div',
+      ]);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('anim-in');
+            observer.unobserve(entry.target); // fire once
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      function init() {
+        targets.forEach(([selector, classes]) => {
+          const els = document.querySelectorAll(selector);
+          els.forEach((el, i) => {
+            // Don't re-animate hero (already has CSS animations)
+            if (el.closest('.hero')) return;
+
+            classes.forEach(c => el.classList.add(c));
+
+            // Add stagger delay for list/grid items
+            if (staggerSelectors.has(selector)) {
+              const delayClass = 'anim-delay-' + Math.min(i + 1, 6);
+              el.classList.add(delayClass);
+            }
+
+            observer.observe(el);
+          });
+        });
+      }
+
+      // Run after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
   </script>
 </body>
 
