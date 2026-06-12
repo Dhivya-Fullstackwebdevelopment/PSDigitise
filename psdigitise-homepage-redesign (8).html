@@ -2527,72 +2527,74 @@
         grid-template-columns: 1fr !important;
       }
 
-      .cta-section {.cta-section {
-        padding: 64px 16px;
+      .cta-section {
+        .cta-section {
+          padding: 64px 16px;
+        }
+
+        .cta-h2 {
+          font-size: clamp(1.5rem, 6vw, 2rem);
+        }
+
+        .cta-sub {
+          font-size: 14px;
+        }
+
+        .footer-g {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .f-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+
+        .f-contact {
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .sec-head {
+          margin-bottom: 36px;
+        }
+
+        .sec-h2 {
+          font-size: clamp(1.6rem, 7vw, 2.2rem);
+        }
       }
 
-      .cta-h2 {
-        font-size: clamp(1.5rem, 6vw, 2rem);
-      }
+      @media(max-width:480px) {
 
-      .cta-sub {
-        font-size: 14px;
-      }
+        .proof-bar,
+        .metrics,
+        .proc-steps,
+        .ind-bento {
+          grid-template-columns: 1fr;
+        }
 
-      .footer-g {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
+        .ib.span2 {
+          grid-column: span 1;
+        }
 
-      .f-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
+        .pcard-footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
 
-      .f-contact {
-        flex-direction: column;
-        gap: 6px;
-      }
+        .pcard-btns {
+          align-items: stretch;
+          flex-direction: row;
+          width: 100%;
+          gap: 8px;
+        }
 
-      .sec-head {
-        margin-bottom: 36px;
-      }
-
-      .sec-h2 {
-        font-size: clamp(1.6rem, 7vw, 2.2rem);
-      }
-    }
-
-    @media(max-width:480px) {
-
-      .proof-bar,
-      .metrics,
-      .proc-steps,
-      .ind-bento {
-        grid-template-columns: 1fr;
-      }
-
-      .ib.span2 {
-        grid-column: span 1;
-      }
-
-      .pcard-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .pcard-btns {
-        align-items: stretch;
-        flex-direction: row;
-        width: 100%;
-        gap: 8px;
-      }
-
-      .pbtn {
-        flex: 1;
-        justify-content: center;
+        .pbtn {
+          flex: 1;
+          justify-content: center;
+        }
       }
     }
 
@@ -3409,8 +3411,7 @@
           </div>
         </div>
         <div class="ib">
-          <div class="ib-num">10</div><span class="ib-icon"><img src="/assets/icons/printing.png"
-              alt="Printing"></span>
+          <div class="ib-num">10</div><span class="ib-icon"><img src="/assets/icons/printing.png" alt="Printing"></span>
           <div class="ib-name">Printing &amp; Packaging</div>
           <div class="ib-desc">Job costing, material planning, subcontracting and customer-specific pricing for
             converters.</div>
