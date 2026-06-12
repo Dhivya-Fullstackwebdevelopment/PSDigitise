@@ -277,12 +277,13 @@
       color: inherit;
     }
 
-    /* ── REFACTORED CONTAINER FOR FULL WIDTH LAPTOP LAYOUTS ── */
+    /* ── DYNAMIC GLOBAL WRAPPER: EDGES OUT TO 100% WITH BALANCED SIDE SPACES ── */
     .W {
       width: 100%;
-      max-width: 100% !important; 
+      max-width: 100% !important;
       margin: 0 auto;
-      padding: 0 8%; /* Creates the elegant, standard spacing matching the uploaded asset image */
+      padding: 0 max(2rem, 6vw);
+      /* Perfect scaling layout spacing for widescreen displays */
     }
 
     /* NAV */
@@ -300,7 +301,7 @@
     .nav-inner {
       width: 100%;
       max-width: 100%;
-      padding: 10px 8%; /* Aligns navbar branding dynamically with content wrappers */
+      padding: 10px max(2rem, 6vw);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -334,7 +335,7 @@
     .nav-right-group {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
@@ -346,7 +347,7 @@
     }
 
     .nav-links a {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--ink2);
       transition: color .15s;
@@ -384,14 +385,17 @@
       opacity: .88;
     }
 
-    /* HERO */
+    /* ── FIRST HERO SECTION: COVERS 100% VERTICAL VIEWPORT HEIGHT ── */
     .hero {
-      min-height: auto;
-      padding: 120px 8% 40px;
+      min-height: 100vh;
+      /* Fills screen fully on laptop desktop viewports */
+      width: 100%;
+      padding: 110px max(2rem, 6vw) 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      /* Beautifully centers content vertically */
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -488,9 +492,9 @@
     }
 
     .hero-h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
       font-weight: 800;
-      line-height: 1.08;
+      line-height: 1.1;
       letter-spacing: -.04em;
       color: var(--white);
       margin-bottom: 24px;
@@ -509,8 +513,8 @@
       font-weight: 300;
       color: var(--ink2);
       line-height: 1.75;
-      max-width: 620px;
-      margin: 0 auto 32px;
+      max-width: 660px;
+      margin: 0 auto 36px;
       animation: fadeUp .6s .2s ease both;
     }
 
@@ -629,7 +633,7 @@
 
     /* ERP SECTION */
     .erp-wrap {
-      padding: 50px 0;
+      padding: 80px 0;
       background:
         radial-gradient(ellipse 60% 80% at 0% 50%, rgba(74, 26, 158, .15) 0%, transparent 60%),
         rgba(16, 7, 34, .95);
@@ -666,7 +670,7 @@
       font-size: clamp(1.8rem, 3.5vw, 3rem);
       font-weight: 800;
       letter-spacing: -.04em;
-      line-height: 1.08;
+      line-height: 1.1;
       color: var(--white);
       margin-bottom: 16px;
     }
@@ -904,8 +908,7 @@
       font-size: 12px;
       color: rgb(255 255 255 / 70%);
     }
-
-    .cap-get-access {
+     .cap-get-access {
       font-size: 13px;
       font-weight: 700;
       color: var(--p100);
@@ -913,6 +916,7 @@
       align-items: center;
       gap: 4px;
     }
+
 
     .cap-highlight {
       background: linear-gradient(135deg, rgba(74, 26, 158, .3), rgba(192, 38, 211, .15));
@@ -1098,7 +1102,7 @@
 
     /* SERVICES */
     .svc-section {
-      padding: 50px 0;
+      padding: 80px 0;
     }
 
     .sec-head {
@@ -1241,7 +1245,7 @@
 
     /* INDUSTRIES */
     .ind-section {
-      padding: 50px 0;
+      padding: 80px 0;
     }
 
     .ind-bento {
@@ -1348,7 +1352,7 @@
 
     /* PROCESS */
     .proc-section {
-      padding: 50px 0;
+      padding: 80px 0;
       background: rgba(22, 8, 53, .3);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -1420,7 +1424,7 @@
 
     /* TESTIMONIALS */
     .testi-section {
-      padding: 50px 0;
+      padding: 80px 0;
     }
 
     .t-grid {
@@ -1484,7 +1488,7 @@
 
     /* CTA */
     .cta-section {
-      padding: 60px 15px;
+      padding: 80px 15px;
       text-align: center;
       background: linear-gradient(135deg, var(--p700), rgba(45, 15, 106, .9), rgba(192, 38, 211, .15));
       border-top: 1px solid var(--line);
@@ -1688,8 +1692,7 @@
     .f-contact a:hover {
       color: var(--white);
     }
-
-    @keyframes fadeUp {
+     @keyframes fadeUp {
       from {
         opacity: 0;
         transform: translateY(22px);
@@ -1703,7 +1706,7 @@
 
     /* PRODUCTS SECTION */
     .prod-section {
-      padding: 60px 0;
+      padding: 80px 0;
       background:
         radial-gradient(ellipse 60% 70% at 100% 20%, rgba(192, 38, 211, .09) 0%, transparent 55%),
         radial-gradient(ellipse 50% 60% at 0% 80%, rgba(74, 26, 158, .1) 0%, transparent 55%),
@@ -1764,7 +1767,7 @@
       color: var(--white);
     }
 
-    /* ── REFACTORED 3-COLUMN LAYOUT MATCHING REFERENCE MOCKUP ── */
+    /* ── WIDESCREEN GRID LAYOUT MATCHING ASS-IMAGE STRUCTURE ── */
     .prod-showcase {
       display: grid;
       grid-template-columns: repeat(3, 1fr) !important;
@@ -1979,7 +1982,6 @@
       background: var(--teal);
       animation: pulse 2s infinite;
     }
-
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: .3; }
@@ -2099,7 +2101,6 @@
       pointer-events: none;
     }
 
-    /* HAMBURGER */
     .menu-toggle {
       display: none;
       background: none;
@@ -2233,23 +2234,20 @@
       margin-bottom: 16px;
     }
 
-    /* ── RESPONSIVE MEDIA QUERIES FOR GRIDS AND CONTAINER SCALING ── */
+    /* RESPONSIVE MEDIA BREAKPOINTS */
     @media(max-width:1400px) {
-      .W {
-        padding: 0 5%; /* Safely drops padding down slightly to preserve asset columns on mid-sized laptops */
-      }
+
+      .W,
       .nav-inner {
-        padding: 10px 5%;
+        padding: 0 5%;
       }
     }
 
     @media(max-width:1100px) {
-      .W {
-        padding: 0 4%;
-      }
 
+      .W,
       .nav-inner {
-        padding: 10px 4%;
+        padding: 0 4%;
       }
 
       .nav-links {
@@ -2302,7 +2300,7 @@
       }
 
       .prod-showcase {
-        grid-template-columns: 1fr 1fr !important; /* Adaptively shifts into a 2-column structure */
+        grid-template-columns: 1fr 1fr !important;
       }
 
       .footer-g {
@@ -2312,6 +2310,7 @@
     }
 
     @media(max-width:930px) {
+
       .nav-links,
       .nav-badge,
       .nav-cta {
@@ -2324,22 +2323,28 @@
     }
 
     @media(max-width:768px) {
-      .W {
+
+      .W,
+      .nav-inner {
         padding: 0 16px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 120px 16px 56px;
       }
 
       .nav-inner {
         height: 72px;
-        padding: 0 16px;
       }
 
       .logo-img {
         height: 40px;
       }
-
-      .hero {
+       .hero {
         padding: 110px 16px 56px;
       }
+
 
       .hero-h1 {
         font-size: clamp(2rem, 8.5vw, 3.2rem);
@@ -2379,8 +2384,7 @@
         border: 1.5px solid rgba(168, 85, 247, 0.35) !important;
         background: transparent !important;
       }
-
-      .hero-pills {
+       .hero-pills {
         gap: 8px;
       }
 
@@ -2392,7 +2396,7 @@
       .hero-bars {
         display: none;
       }
-
+      
       .mobile-partner-btn {
         display: block !important;
         text-align: center;
@@ -2524,7 +2528,7 @@
       }
 
       .prod-showcase {
-        grid-template-columns: 1fr !important; /* Collapses neatly into single stacked columns for smart screens */
+        grid-template-columns: 1fr !important;
       }
 
       .prod-compare-grid {
@@ -2569,6 +2573,7 @@
     }
 
     @media(max-width:480px) {
+
       .proof-bar,
       .metrics,
       .proc-steps,
@@ -2599,28 +2604,57 @@
       }
     }
 
-    /* ═══════════════════════════════════════════
-        SCROLL-TRIGGERED ANIMATIONS
-     ═══════════════════════════════════════════ */
+    /* SCROLL ANIMATIONS */
     .anim-ready {
       opacity: 0;
       transform: translateY(32px);
-      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .anim-ready.anim-from-left { transform: translateX(-40px); }
-    .anim-ready.anim-from-right { transform: translateX(40px); }
-    .anim-ready.anim-scale { transform: translateY(20px) scale(0.95); }
-    .anim-ready.anim-fade { transform: none; }
-    .anim-ready.anim-in { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+    .anim-ready.anim-from-left {
+      transform: translateX(-40px);
+    }
 
-    .anim-ready.anim-delay-1 { transition-delay: 0.08s; }
-    .anim-ready.anim-delay-2 { transition-delay: 0.16s; }
-    .anim-ready.anim-delay-3 { transition-delay: 0.24s; }
-    .anim-ready.anim-delay-4 { transition-delay: 0.32s; }
-    .anim-ready.anim-delay-5 { transition-delay: 0.40s; }
-    .anim-ready.anim-delay-6 { transition-delay: 0.48s; }
+    .anim-ready.anim-from-right {
+      transform: translateX(40px);
+    }
+
+    .anim-ready.anim-scale {
+      transform: translateY(20px) scale(0.95);
+    }
+
+    .anim-ready.anim-fade {
+      transform: none;
+    }
+
+    .anim-ready.anim-in {
+      opacity: 1;
+      transform: translateY(0) translateX(0) scale(1);
+    }
+
+    .anim-ready.anim-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .anim-ready.anim-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .anim-ready.anim-delay-3 {
+      transition-delay: 0.24s;
+    }
+
+    .anim-ready.anim-delay-4 {
+      transition-delay: 0.32s;
+    }
+
+    .anim-ready.anim-delay-5 {
+      transition-delay: 0.40s;
+    }
+
+    .anim-ready.anim-delay-6 {
+      transition-delay: 0.48s;
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .anim-ready {
@@ -2639,30 +2673,94 @@
         min-height: 72px !important;
       }
 
-      .logo-img { height: 40px !important; }
-      .nav-right-group { gap: 10px !important; flex-wrap: nowrap !important; }
-      .nav-links { gap: 14px !important; flex-wrap: nowrap !important; }
-      .nav-links a { font-size: 14px !important; }
-      .nav-badge { font-size: 11px !important; padding: 8px 12px !important; white-space: nowrap !important; }
-      .nav-cta { font-size: 13px !important; padding: 8px 14px !important; white-space: nowrap !important; }
+      .logo-img {
+        height: 40px !important;
+      }
+
+      .nav-right-group {
+        gap: 10px !important;
+        flex-wrap: nowrap !important;
+      }
+
+      .nav-links {
+        gap: 14px !important;
+        flex-wrap: nowrap !important;
+      }
+
+      .nav-links a {
+        font-size: 14px !important;
+      }
+
+      .nav-badge {
+        font-size: 11px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+      }
+
+      .nav-cta {
+        font-size: 13px !important;
+        padding: 8px 14px !important;
+        white-space: nowrap !important;
+      }
     }
 
     @media (max-width: 1200px) {
-      .nav-inner { padding: 8px 4% !important; min-height: 68px !important; gap: 8px !important; }
-      .logo-img { height: 36px !important; }
-      .nav-links { gap: 12px !important; }
-      .nav-links a { font-size: 13px !important; }
-      .nav-badge { font-size: 10px !important; padding: 7px 10px !important; letter-spacing: .03em !important; }
-      .nav-cta { font-size: 12px !important; padding: 7px 12px !important; }
+      .nav-inner {
+        padding: 8px 4% !important;
+        min-height: 68px !important;
+        gap: 8px !important;
+      }
+
+      .logo-img {
+        height: 36px !important;
+      }
+
+      .nav-links {
+        gap: 12px !important;
+      }
+
+      .nav-links a {
+        font-size: 13px !important;
+      }
+
+      .nav-badge {
+        font-size: 10px !important;
+        padding: 7px 10px !important;
+        letter-spacing: .03em !important;
+      }
+
+      .nav-cta {
+        font-size: 12px !important;
+        padding: 7px 12px !important;
+      }
     }
 
     @media (max-width: 1060px) {
-      .nav-inner { padding: 8px 16px !important; gap: 6px !important; }
-      .logo-img { height: 32px !important; }
-      .nav-links { gap: 10px !important; }
-      .nav-links a { font-size: 12px !important; }
-      .nav-badge { display: none !important; }
-      .nav-cta { font-size: 12px !important; padding: 7px 10px !important; }
+      .nav-inner {
+        padding: 8px 16px !important;
+        gap: 6px !important;
+      }
+
+      .logo-img {
+        height: 32px !important;
+      }
+
+      .nav-links {
+        gap: 10px !important;
+      }
+
+      .nav-links a {
+        font-size: 12px !important;
+      }
+
+      .nav-badge {
+        display: none !important;
+      }
+
+      .nav-cta {
+        font-size: 12px !important;
+        padding: 7px 10px !important;
+      }
     }
   </style>
 </head>
