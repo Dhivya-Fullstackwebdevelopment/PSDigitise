@@ -341,7 +341,7 @@
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 30px;
       list-style: none;
       flex-wrap: wrap;
     }
@@ -908,7 +908,8 @@
       font-size: 12px;
       color: rgb(255 255 255 / 70%);
     }
-     .cap-get-access {
+
+    .cap-get-access {
       font-size: 13px;
       font-weight: 700;
       color: var(--p100);
@@ -1692,7 +1693,8 @@
     .f-contact a:hover {
       color: var(--white);
     }
-     @keyframes fadeUp {
+
+    @keyframes fadeUp {
       from {
         opacity: 0;
         transform: translateY(22px);
@@ -1982,9 +1984,17 @@
       background: var(--teal);
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .3; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .3;
+      }
     }
 
     .ps-soon {
@@ -2341,7 +2351,8 @@
       .logo-img {
         height: 40px;
       }
-       .hero {
+
+      .hero {
         padding: 110px 16px 56px;
       }
 
@@ -2384,7 +2395,8 @@
         border: 1.5px solid rgba(168, 85, 247, 0.35) !important;
         background: transparent !important;
       }
-       .hero-pills {
+
+      .hero-pills {
         gap: 8px;
       }
 
@@ -2396,7 +2408,7 @@
       .hero-bars {
         display: none;
       }
-      
+
       .mobile-partner-btn {
         display: block !important;
         text-align: center;
@@ -2760,6 +2772,48 @@
       .nav-cta {
         font-size: 12px !important;
         padding: 7px 10px !important;
+      }
+    }
+  </style>
+  <style id="centered-menu-override">
+    /* 1. Set nav layout into 3 distinct structural columns */
+    .nav-inner {
+     
+      grid-template-columns: auto 1fr auto !important;
+      align-items: center !important;
+    }
+
+    /* 2. Dissolve the right wrapper group container so elements obey grid columns directly */
+    .nav-right-group {
+      display: contents !important;
+    }
+
+    /* 3. Drop links perfectly into the center space column */
+    .nav-links {
+      grid-column: 2 !important;
+      justify-self: center !important;
+      margin: 0 auto !important;
+    }
+
+    /* 4. Group your action components into the final right-side column slot */
+    .nav-badge,
+    .nav-cta,
+    .menu-toggle {
+      grid-column: 3 !important;
+      justify-self: flex-end !important;
+    }
+
+    /* 5. Anchor logo to the left start position */
+    .logo {
+      grid-column: 1 !important;
+      justify-self: flex-start !important;
+    }
+
+    /* 6. Safely snap back layout logic when elements hide below 930px break points */
+    @media (max-width: 930px) {
+      .nav-inner {
+        display: flex !important;
+        justify-content: space-between !important;
       }
     }
   </style>
